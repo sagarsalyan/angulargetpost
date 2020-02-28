@@ -1,0 +1,13 @@
+<div>
+  <input type="text" (keyup)="onNameKeyUp($event)">
+  <button (click)="getProfile($event)">Get Profile</button>
+  <div *ngIf="found; else elseBlock">
+    <span>{{name}}'s ID is {{id}}</span>
+  </div>
+  <ng-template #elseBlock>
+    <h3>No Data Found</h3>
+  </ng-template>
+
+  ----------------------------<br>
+  <button (click)="postProfile()">Post Profile</button>
+</div>

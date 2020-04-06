@@ -27,28 +27,31 @@ export class GetComponent implements OnInit {
     // console.log(event.target.stname.value);
     // console.log(this.stName);
     debugger;
-    this.httpClient.get(`http://my-json-server.typicode.com/sagarsalyan/fake-json/profiles/?name=${this.name}`)
+    this.httpClient.get(`http://my-json-server.typicode.com/sagarsalyan/fake-json/profiles/?name=${this.stName}`)
       .subscribe(
         (data:any[])=>{
           if(data.length){
           console.log(data);
           this.id = data[0].id;
-
+          this.name = data[0].name;
           this.found=true;
         }
         }
       )
-      this.httpClient.get(`https://linux-gi6m:8001/sap/opu/odata/sap/ZMMGATEPASS_SRV/ZmmpogateSet?sap-client=800&sap-language=EN`)
+
+      //Test for Python API
+      this.httpClient.get(`http://localhost:5000/users`)
         .subscribe(
           (data:any[])=>{
-            if(data.d.results.length){
+            if(data.length){
             console.log(data);
-            this.length = data.d.results.length;
+            // this.length = data.length;
 
             this.found=true;
           }
           }
         )
+        //Test for Python API
   }
   postProfile(){
     debugger;

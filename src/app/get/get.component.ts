@@ -52,6 +52,20 @@ export class GetComponent implements OnInit {
           }
         )
         //Test for Python API
+
+        //Test for PHP Api
+        this.httpClient.get('http://localhost/api/category/read.php')
+          .subscribe(
+            (data:any[])=>{
+              if(data.length){
+              console.log(data);
+              // this.length = data.length;
+
+              this.found=true;
+            }
+            }
+          )
+        //Test for PHP Api
   }
   postProfile(){
     debugger;

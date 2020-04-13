@@ -39,8 +39,9 @@ export class GetComponent implements OnInit {
         }
       )
 
-      //Test for Python API
-      this.httpClient.get(`http://localhost:5000/users`)
+      // Test for Nodejs API
+
+      this.httpClient.get(`http://localhost:3000/api/products`)
         .subscribe(
           (data:any[])=>{
             if(data.length){
@@ -51,20 +52,55 @@ export class GetComponent implements OnInit {
           }
           }
         )
+
+      // Test for Nodejs API
+
+      // Test for Nodejs API
+
+      this.httpClient.get(`http://localhost:3001/tasks`)
+        .subscribe(
+          (data:any[])=>{
+            if(data.length){
+            console.log(data);
+            // this.length = data.length;
+
+            this.found=true;
+          }
+          }
+        )
+
+      // Test for Nodejs API
+
+      //Test for Python API
+
+      // this.httpClient.get(`http://localhost:5000/users`)
+      //   .subscribe(
+      //     (data:any[])=>{
+      //       if(data.length){
+      //       console.log(data);
+      //       // this.length = data.length;
+      //
+      //       this.found=true;
+      //     }
+      //     }
+      //   )
+
         //Test for Python API
 
         //Test for PHP Api
-        this.httpClient.get('http://localhost/api/category/read.php')
-          .subscribe(
-            (data:any[])=>{
-              if(data.length){
-              console.log(data);
-              // this.length = data.length;
 
-              this.found=true;
-            }
-            }
-          )
+        // this.httpClient.get('http://localhost/api/category/read.php')
+        //   .subscribe(
+        //     (data:any[])=>{
+        //       if(data.length){
+        //       console.log(data);
+        //       // this.length = data.length;
+        //
+        //       this.found=true;
+        //     }
+        //     }
+        //   )
+
         //Test for PHP Api
   }
   postProfile(){
